@@ -1,12 +1,23 @@
 class User {
-    constructor(first, last) {
-      this.first = document.getElementById('firstName').value;
-      this.last = document.getElementById('lastName').value;
-    }
+  constructor(first) {
+    first = document.getElementById("firstName").value;
+    this.firstname = first;
+  }
   present() {
-    return "Your full name is " + this.first + " " + this.last
+    return 'Your name must be ' + this.firstname + " ";
   }
 }
 
-let fullName = new User(firstName, lastName);
-document.getElementById("result").innerHTML = fullName.present();
+class Sur extends User {
+  constructor(first, last) {
+    super(first);
+    last = document.getElementById("lastName").value;
+    this.lastname = last
+  }
+  show() {
+    return this.present() + this.lastname;
+  }
+}
+
+fullname = new Sur(this.firstname, this.lastname);
+document.getElementById("result").innerHTML = fullname.show();
