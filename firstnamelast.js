@@ -1,22 +1,20 @@
 class User {
-  constructor(first) {
-    this.fName = first;
-    console.log(fullname);
+  constructor(fName, lName){
+    this.fName = fName;
+    this.lName = lName;
   }
-  present() {
-    return 'Your full name is ' + this.fName;
+  logFullName(){
+    console.log(this.fName, this.lName);
+    return this;
   }
-}
-
-class Last extends User {
-  constructor(first, last) {
-    super(first);
-    this.lName = last;
-  }
-  show() {
-    return this.present() + this.lName + ". ";
+  show(){
+    document.getElementById("result").innerHTML="Your full name is " + this.fName + " " + this.lName;
   }
 }
 
-fullname = new User(document.getElementById('firstName').value, document.getElementById('lastName').value);
-document.getElementById("result").innerHTML = fullname.show();
+var first = document.getElementById('firstName').value;
+var last = document.getElementById('lastName').value;
+var fullname = new User(first,last);
+
+fullname.logFullName();
+fullname.show();
