@@ -11,10 +11,10 @@ class User {
     document.getElementById("result").innerHTML="Your full name is " + this.fName + " " + this.lName;
   }
 }
-
-var first = document.getElementById('firstName').value;
-var last = document.getElementById('lastName').value;
-var fullname = new User(first,last);
-
-fullname.logFullName();
-fullname.show();
+function fullName(){
+  const first = document.getElementById('firstName').value;
+  const last = document.getElementById('lastName').value;
+  var fullname = new User(first,last);
+  fullname.logFullName();
+  fullname.show();
+}
